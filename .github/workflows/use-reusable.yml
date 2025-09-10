@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Reusable Worflow
 on:
   push:
     branches:
@@ -67,8 +67,7 @@ jobs:
           path: dist
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    uses: ./.github/workflows/resuable.yml
+    uses: ./.github/workflows/reusable.yml
     
   report:
     needs: [lint, deploy]
